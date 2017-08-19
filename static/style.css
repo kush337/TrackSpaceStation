@@ -1,7 +1,14 @@
 #map {
 	height: 400px;
-	width: 100%;
-	margin: 100px;
-	padding: 100px;
+	width: 75%;
+	padding: 50px;
 }
 
+#map_button {
+	position: absolute;
+	text-align: center;
+}
+
+.padme {
+	padding: 100px;
+}
