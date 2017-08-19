@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Track ISS</title>
+	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js"></script>
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename ='style.css') }}">
+	
+	<script type="text/javascript">
+     	function initMap() {
+     		var coords = {lat: {{ lat }}, lng: {{ lon }}}
+        	var map = new google.maps.Map(document.getElementById('map'), {
+          	center: coords,
+          	zoom: 6
+        	});
+        	var marker = new google.maps.Marker({
+        		position: coords,
+        		map: map
+        	})
+      	}
+    	function reloadPage() {
+    		location.reload();
+		}
+    </script>
+
+</head>
+<body onload="initMap()">
+
+<div class="container">
+	<div class="row">
+		<div class="col-md-4"><button id="map_button" class="btn btn-primary" onclick="reloadPage()" style="margin: 10px; padding: 10px;">Track Me!</button></div>
+		<div class="col-md-4"><h2>Latitude: {{ lat }}</h2></div>
+		<div class="col-md-4"><h2>Longitude: {{ lon }}</h2></div>
+	</div>
+	
+</div>
+
+	<div class="container-fluid">
+		<div id="map" style="height: 750px; width: 100%"></div>
+	</div>
+
+</body>
+</html>
+
+
+

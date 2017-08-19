@@ -1,14 +1,5 @@
-#map {
-	height: 400px;
-	width: 75%;
-	padding: 50px;
-}
-
 #map_button {
 	position: absolute;
 	text-align: center;
-}
-
-.padme {
-	padding: 100px;
+	top: 50%;
 }
