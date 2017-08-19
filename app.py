@@ -5,7 +5,7 @@ import json
 app = Flask(__name__)
 
 @app.route('/')
-def index(lat=None, lon=None):
+def index():
 	iss_response = requests.get('http://api.open-notify.org/iss-now.json')
 	json_data = iss_response.content
 	json_dict = json.loads(json_data)
